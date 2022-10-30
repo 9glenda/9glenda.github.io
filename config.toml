@@ -2,3 +2,45 @@ baseURL = 'http://9glenda.github.io/'
 languageCode = 'en-us'
 title = '9glenda'
 theme = "terminal"
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    title = "9glenda"
+    subtitle = "Personal website"
+    owner = "9glenda"
+    keywords = ""
+    copyright = ""
+    menuMore = "Show more"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
+    newerPosts = "Newer posts"
+    olderPosts = "Older posts"
+    missingContentMessage = "Page not found..."
+    missingBackButtonLabel = "Back to home page"
+
+    [languages.en.params.logo]
+      logoText = "9glenda"
+      logoHomeLink = "/"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about"
+      [[languages.en.menu.main]]
+        identifier = "github"
+        name = "Github"
+        url = "https://github.com/9glenda"
+
+
+[params]
+  contentTypeName = "posts"
+  themeColor = "blue"
+  showMenuItems = 2
+  showLanguageSelector = false
+  fullWidthTheme = false
+  centerTheme = true
+  autoCover = true
+  showLastUpdated = false
+

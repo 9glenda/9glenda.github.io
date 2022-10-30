@@ -21,7 +21,7 @@
         overlays = [ overlay ];
       };
       overlay = (final: prev: {
-        site = prev.callPackage ./website { };
+        site = prev.callPackage ./. { };
       });
 
     in
