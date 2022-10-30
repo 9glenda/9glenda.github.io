@@ -16,9 +16,6 @@ jobs:
         with:
           hugo-version: "0.64.0"
 
-            # - name: clone theme
-            #   run: git clone https://github.com/panr/hugo-theme-terminal themes/
-
       - name: Build
         # remove --minify tag if you do not need it
         # docs: https://gohugo.io/hugo-pipes/minification/
