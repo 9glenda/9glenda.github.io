@@ -1,4 +1,4 @@
 baseURL = 'http://9glenda.github.io/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = '9glenda'
 theme = "terminal"
