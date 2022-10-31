@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>vaultwarden on 9glenda</title><link>http://9glenda.github.io/tags/vaultwarden/</link><description>Recent content in vaultwarden on 9glenda</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 31 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://9glenda.github.io/tags/vaultwarden/index.xml" rel="self" type="application/rss+xml"/><item><title>Vaultwarden</title><link>http://9glenda.github.io/posts/vaultwarden/</link><pubDate>Mon, 31 Oct 2022 00:00:00 +0000</pubDate><guid>http://9glenda.github.io/posts/vaultwarden/</guid><description>Vaultwarden on nixos with tailscale and https Code:
+{ pkgs , config , lib , ... }: with lib; with builtins; let cfg = config.sys.services; tskey = builtins.getEnv &amp;#34;key&amp;#34;; in { config = mkIf cfg.vaultwarden { services.vaultwarden = { enable = true; config = { domain = &amp;#34;https://pi.tahr-cloud.ts.net&amp;#34;; #domain = &amp;#34;https://pi.9glenda.github.beta.tailscale.net&amp;#34;; signupsAllowed = true; }; }; services.caddy = { enable = true; #virtualHosts.&amp;#34;pi.9glenda.github.beta.tailscale.net&amp;#34;.extraConfig = &amp;#39;&amp;#39; virtualHosts.&amp;#34;pi.tahr-cloud.ts.net&amp;#34;.extraConfig = &amp;#39;&amp;#39; reverse_proxy http://127.0.0.1:8000 &amp;#39;&amp;#39;; }; }; }</description><content>&lt;h1 id="vaultwarden-on-nixos-with-tailscale-and-https">Vaultwarden on nixos with tailscale and https&lt;/h1>
+&lt;p>Code:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-nix" data-lang="nix">&lt;span style="display:flex;">&lt;span>{ pkgs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">,&lt;/span> config
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">,&lt;/span> lib
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#f92672">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">with&lt;/span> lib;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">with&lt;/span> builtins; &lt;span style="color:#66d9ef">let&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cfg &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>sys&lt;span style="color:#f92672">.&lt;/span>services;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tskey &lt;span style="color:#f92672">=&lt;/span> builtins&lt;span style="color:#f92672">.&lt;/span>getEnv &lt;span style="color:#e6db74">&amp;#34;key&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">in&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> config &lt;span style="color:#f92672">=&lt;/span> mkIf cfg&lt;span style="color:#f92672">.&lt;/span>vaultwarden {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> services&lt;span style="color:#f92672">.&lt;/span>vaultwarden &lt;span style="color:#f92672">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> enable &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> config &lt;span style="color:#f92672">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> domain &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;https://pi.tahr-cloud.ts.net&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">#domain = &amp;#34;https://pi.9glenda.github.beta.tailscale.net&amp;#34;;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> signupsAllowed &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> services&lt;span style="color:#f92672">.&lt;/span>caddy &lt;span style="color:#f92672">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> enable &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">#virtualHosts.&amp;#34;pi.9glenda.github.beta.tailscale.net&amp;#34;.extraConfig = &amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> virtualHosts&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#e6db74">&amp;#34;pi.tahr-cloud.ts.net&amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>extraConfig &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> reverse_proxy http://127.0.0.1:8000
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#39;&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item></channel></rss>
