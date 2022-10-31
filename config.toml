@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = '9glenda'
 theme = "terminal"
 paginate = 5
+copyright = 'This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.'
 
 [languages]
   [languages.en]
@@ -21,7 +22,7 @@ paginate = 5
     missingBackButtonLabel = "Back to home page"
 
     [languages.en.params.logo]
-      logoText = "9glenda"
+      logoText = "~/9glenda"
       logoHomeLink = "/"
 
     [languages.en.menu]
@@ -45,3 +46,5 @@ paginate = 5
   autoCover = true
   showLastUpdated = false
 
+[author]
+name = 'My Name Here'

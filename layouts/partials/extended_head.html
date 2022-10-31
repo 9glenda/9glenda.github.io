@@ -1,0 +1,10 @@
+<p id="header"></p>
+<script>
+function hide() {
+   document.getElementById("header").innerHTML = "";
+}
+function show() {
+ document.getElementById("header").innerHTML = '<p align="center">Use this <a rel="alternate" color="#23B0FF" type="application/rss+xml" href="/index.xml">RSS feed</a> to get notified of new blog posts. <a href="#" onclick="hide()">[x]</a> </p>';
+}
+show()
+</script>
