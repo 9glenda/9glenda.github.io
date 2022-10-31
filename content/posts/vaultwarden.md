@@ -8,7 +8,7 @@ tags:
   - vaultwarden
 description: "Setting up tailscale with vaultwarden on nixos"
 readingTime: true
-hideComments: false
+hideComments: true
 ---
 # Vaultwarden on nixos with tailscale and https
 Code:
