@@ -1,12 +1,13 @@
-+++
-title = "My First Post"
-date = "2022-10-30"
-author = "9glenda"
-readingTime = true 
-hideComments = true
-tags = ["hugo"]
-description = "Documenting my first experience with hugo"
-+++
+---
+title: "My First Post"
+date: "2022-10-30"
+author: "9glenda"
+readingTime: true 
+hideComments: true
+tags:
+  - hugo
+description: "Documenting my first experience with hugo"
+---
 # My first post
 This is my first "post". It's used to document my experience with hugo.
 ## Getting started with hugo
