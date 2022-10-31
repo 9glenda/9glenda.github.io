@@ -20,6 +20,7 @@ copyright = 'This work is licensed under a Creative Commons Attribution-ShareAli
     olderPosts = "Older posts"
     missingContentMessage = "Page not found..."
     missingBackButtonLabel = "Back to home page"
+    contentDir = 'content'
 
     [languages.en.params.logo]
       logoText = "~/9glenda"

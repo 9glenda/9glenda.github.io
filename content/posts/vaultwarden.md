@@ -9,8 +9,10 @@ tags:
 description: "Setting up tailscale with vaultwarden on nixos"
 readingTime: true
 hideComments: true
+syntaxHighlighting: false
 ---
 # Vaultwarden on nixos with tailscale and https
+
 Code:
 ```nix
 { pkgs
