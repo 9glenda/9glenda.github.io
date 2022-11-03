@@ -4,7 +4,7 @@ date = "2022-11-03T07:52:41Z"
 author = ""
 authorTwitter = "" #do not include @
 cover = ""
-tags = ["hugo", "github=pages"]
+tags = ["hugo", "github-pages"]
 description = "Guide to create your own website with github pages"
 readingTime = true
 hideComments = true
@@ -130,6 +130,10 @@ paginate = 5
         name = "Showcase"
         url = "/showcase"
 ```
+### Create your first post
+```sh
+hugo new posts/first-post.md
+```
 ### Github actions 
 To automatically deploy the website we will use github actions.
 It can be set up like following:
@@ -171,6 +175,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
 ```
+### Testing the website locally
+To test your website locally hugo can spin up a webserver for you:
+```sh
+hugo server -D
+```
 ### Git commit
 You need to create a initial commit for now:
 ```sh
@@ -187,4 +196,7 @@ git remote add origin git@github.com:9glenda/glenda.github.io.git
 git branch -M main
 git push -u origin main
 ```
-
+### Set up github pages
+You will need to pull up your github repo and open settings/pages to configure github pages.
+Now you need to select `Deploy from branch` and after that set the branch to deploy from to gh-pages.
+To confirm just press save.
