@@ -10,39 +10,39 @@ readingTime = true
 hideComments = true
 +++
 # Create own website with hugo and github-pages
-A friend asked me about how I created this website and therefor I decided to create this small guide.
+A friend asked me about how I created this website, so I decided to create this small guide.
 
 ## Initialize the hugo site
-First we have to initialize the hugo website.
+First, we have to initialize the hugo website.
 ```sh
 hugo new site website
 cd website
 hugo new _index.md
 ```
-this will create a folder called `website` where your site is stored.
-You can call the folder differently if you'd like to.
+This will create a folder called `website` where your site is stored.
+You can name the folder differently if you'd like to.
 ## Initialize git repo
 Now we have to initialize a git repo in the `website` folder.
-Therefor change directory into the website folder (`cd website`).
+Therefore, change directory into the website folder (`cd website`).
 ```sh
 git init
 ```
 ### .gitignore
-Add a `.gitignore` file like following:
+Add a `.gitignore` file containing the build files created by hugo:
 ```gitignore
 public
 .hugo_build.lock
 ```
 ### Hugo theme
-We will use the terminal theme for mow but you can always change it later.
-Add a hugo theme like following:
+We will use the terminal theme for now but you can always change it later.
+Add a hugo theme with the following commands:
 ```sh
 mkdir themes
 git submodule add
 git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/terminal
 ```
 ### Hugo config
-Edit your `config.toml` like following:
+Edit your `config.toml` like done below:
 ```toml
 baseURL = 'http://<your github username>.github.io/'
 languageCode = "en-us"
@@ -135,12 +135,12 @@ paginate = 5
 hugo new posts/first-post.md
 ```
 ### Github actions 
-To automatically deploy the website we will use github actions.
-It can be set up like following:
+To automatically deploy the website, we will use github actions.
+It can be set up with the following command:
 ```sh
 mkdir -p .github/workflows
 ```
-Then create a file `.github/workflows/deploy.yaml` containing following
+Then create a file `.github/workflows/deploy.yaml` containing the following:
 ```yaml
 name: github pages
 
@@ -189,8 +189,8 @@ git commit -m "init"
 ### Create a github repo
 It is assumed that you have ssh with github set up to be able to push changes to your github repo.
 Create a github repo called `<your github username>.github.io`. This is the subdomain you will use to host your website.
-After creating the repo you will see an option called `…or push an existing repository from the command line`. Copy paste teh commands from there and run them in the `website` folder.
-For example mine looks like this (`DONT COPY PASTE THIS`):
+After creating the repo you will see an option called `or push an existing repository from the command line`. Copy paste the commands from github and run them locally in the `website` folder.
+For example, mine looks like this (`DO NOT COPY PASTE THIS`):
 ```sh
 git remote add origin git@github.com:9glenda/glenda.github.io.git
 git branch -M main
@@ -199,4 +199,4 @@ git push -u origin main
 ### Set up github pages
 You will need to pull up your github repo and open settings/pages to configure github pages.
 Now you need to select `Deploy from branch` and after that set the branch to deploy from to gh-pages.
-To confirm just press save.
+To confirm, just press save.
