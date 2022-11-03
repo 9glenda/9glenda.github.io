@@ -1,0 +1,148 @@
+<!doctype html><html lang=en><head><title>Own Website :: 9glenda</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Guide to create your own website with github pages"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=http://9glenda.github.io/posts/own-website/><link rel=stylesheet href=/style.css><link rel="shortcut icon" href=http://9glenda.github.io/img/theme-colors/blue.png><link rel=apple-touch-icon href=http://9glenda.github.io/img/theme-colors/blue.png><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="og:title" content="Own Website"><meta property="og:description" content="Guide to create your own website with github pages"><meta property="og:url" content="http://9glenda.github.io/posts/own-website/"><meta property="og:site_name" content="9glenda"><meta property="og:image" content="http://9glenda.github.io/"><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"><meta property="article:published_time" content="2022-11-03 07:52:41 +0000 UTC"><p id=header></p><script>function hide(){document.getElementById("header").innerHTML=""}function show(){document.getElementById("header").innerHTML='<p align="center">Use this <a rel="alternate" color="#23B0FF" type="application/rss+xml" href="/index.xml">RSS feed</a> to get notified of new blog posts. <a href="#" onclick="hide()">[x]</a> </p>'}show()</script></head><body class=blue><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>~/9glenda</div></a></div><div class=menu-trigger>menu</div></div><nav class="menu hidden-on-mobile"><ul class="menu__inner menu__inner--desktop"><li><a href=/about>About</a></li><li><a href=https://github.com/9glenda>Github</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/about>About</a></li><li><a href=https://github.com/9glenda>Github</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=http://9glenda.github.io/posts/own-website/>Own Website</a></h1><div class=post-meta><time class=post-date>2022-11-03 ::</time>
+<span class=post-reading-time>:: 4 min read (836 words)</span></div><span class=post-tags>#<a href=http://9glenda.github.io/tags/hugo/>hugo</a>&nbsp;
+#<a href=http://9glenda.github.io/tags/github-pages/>github-pages</a>&nbsp;</span><div class=post-content><div><h1 id=create-own-website-with-hugo-and-github-pages>Create own website with hugo and github-pages<a href=#create-own-website-with-hugo-and-github-pages class=hanchor arialabel=Anchor>&#8983;</a></h1><p>A friend asked me about how I created this website and therefor I decided to create this small guide.</p><h2 id=initialize-the-hugo-site>Initialize the hugo site<a href=#initialize-the-hugo-site class=hanchor arialabel=Anchor>&#8983;</a></h2><p>First we have to initialize the hugo website.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>hugo new site website
+</span></span><span style=display:flex><span>cd website
+</span></span><span style=display:flex><span>hugo new _index.md
+</span></span></code></pre></div><p>this will create a folder called <code>website</code> where your site is stored.
+You can call the folder differently if you&rsquo;d like to.</p><h2 id=initialize-git-repo>Initialize git repo<a href=#initialize-git-repo class=hanchor arialabel=Anchor>&#8983;</a></h2><p>Now we have to initialize a git repo in the <code>website</code> folder.
+Therefor change directory into the website folder (<code>cd website</code>).</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>git init
+</span></span></code></pre></div><h3 id=gitignore>.gitignore<a href=#gitignore class=hanchor arialabel=Anchor>&#8983;</a></h3><p>Add a <code>.gitignore</code> file like following:</p><pre tabindex=0><code class=language-gitignore data-lang=gitignore>public
+.hugo_build.lock
+</code></pre><h3 id=hugo-theme>Hugo theme<a href=#hugo-theme class=hanchor arialabel=Anchor>&#8983;</a></h3><p>We will use the terminal theme for mow but you can always change it later.
+Add a hugo theme like following:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>mkdir themes
+</span></span><span style=display:flex><span>git submodule add
+</span></span><span style=display:flex><span>git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/terminal
+</span></span></code></pre></div><h3 id=hugo-config>Hugo config<a href=#hugo-config class=hanchor arialabel=Anchor>&#8983;</a></h3><p>Edit your <code>config.toml</code> like following:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml><span style=display:flex><span><span style=color:#a6e22e>baseURL</span> = <span style=color:#e6db74>&#39;http://&lt;your github username&gt;.github.io/&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>languageCode</span> = <span style=color:#e6db74>&#34;en-us&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Add it only if you keep the theme in the `themes` directory.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Remove it if you use the theme as a remote Hugo Module.</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>theme</span> = <span style=color:#e6db74>&#34;terminal&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>paginate</span> = <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>[<span style=color:#a6e22e>params</span>]
+</span></span><span style=display:flex><span>  <span style=color:#75715e># dir name of your main content (default is `content/posts`).</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># the list of set content will show up on your index page (baseurl).</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>contentTypeName</span> = <span style=color:#e6db74>&#34;posts&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># [&#34;orange&#34;, &#34;blue&#34;, &#34;red&#34;, &#34;green&#34;, &#34;pink&#34;]</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>themeColor</span> = <span style=color:#e6db74>&#34;blue&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># if you set this to 0, only submenu trigger will be visible</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>showMenuItems</span> = <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># show selector to switch language</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>showLanguageSelector</span> = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># set theme to full screen width</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>fullWidthTheme</span> = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># center theme with default width</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>centerTheme</span> = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># if your resource directory contains an image called `cover.(jpg|png|webp)`,</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># then the file will be used as a cover automatically.</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># With this option you don&#39;t have to put the `cover` param in a front-matter.</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>autoCover</span> = <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># set post to show the last updated</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>showLastUpdated</span> = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># set a custom favicon (default is a `themeColor` square)</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># favicon = &#34;favicon.ico&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># updatedDatePrefix = &#34;Updated&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># set all headings to their default size (depending on browser settings)</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># oneHeadingSize = true # default</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># whether to show a page&#39;s estimated reading time</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># readingTime = false # default</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># whether to show a table of contents</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># can be overridden in a page&#39;s front-matter</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># Toc = false # default</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># set title for the table of contents</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># can be overridden in a page&#39;s front-matter</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># TocTitle = &#34;Table of Contents&#34; # default</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>[<span style=color:#a6e22e>languages</span>]
+</span></span><span style=display:flex><span>  [<span style=color:#a6e22e>languages</span>.<span style=color:#a6e22e>en</span>]
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>languageName</span> = <span style=color:#e6db74>&#34;English&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>title</span> = <span style=color:#e6db74>&#34;Terminal&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>subtitle</span> = <span style=color:#e6db74>&#34;A simple, retro theme for Hugo&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>owner</span> = <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>keywords</span> = <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>copyright</span> = <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>menuMore</span> = <span style=color:#e6db74>&#34;Show more&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>readMore</span> = <span style=color:#e6db74>&#34;Read more&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>readOtherPosts</span> = <span style=color:#e6db74>&#34;Read other posts&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>newerPosts</span> = <span style=color:#e6db74>&#34;Newer posts&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>olderPosts</span> = <span style=color:#e6db74>&#34;Older posts&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>missingContentMessage</span> = <span style=color:#e6db74>&#34;Page not found...&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>missingBackButtonLabel</span> = <span style=color:#e6db74>&#34;Back to home page&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    [<span style=color:#a6e22e>languages</span>.<span style=color:#a6e22e>en</span>.<span style=color:#a6e22e>params</span>.<span style=color:#a6e22e>logo</span>]
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>logoText</span> = <span style=color:#e6db74>&#34;Terminal&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>logoHomeLink</span> = <span style=color:#e6db74>&#34;/&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    [<span style=color:#a6e22e>languages</span>.<span style=color:#a6e22e>en</span>.<span style=color:#a6e22e>menu</span>]
+</span></span><span style=display:flex><span>      [[<span style=color:#a6e22e>languages</span>.<span style=color:#a6e22e>en</span>.<span style=color:#a6e22e>menu</span>.<span style=color:#a6e22e>main</span>]]
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>identifier</span> = <span style=color:#e6db74>&#34;about&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>name</span> = <span style=color:#e6db74>&#34;About&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>url</span> = <span style=color:#e6db74>&#34;/about&#34;</span>
+</span></span><span style=display:flex><span>      [[<span style=color:#a6e22e>languages</span>.<span style=color:#a6e22e>en</span>.<span style=color:#a6e22e>menu</span>.<span style=color:#a6e22e>main</span>]]
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>identifier</span> = <span style=color:#e6db74>&#34;showcase&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>name</span> = <span style=color:#e6db74>&#34;Showcase&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>url</span> = <span style=color:#e6db74>&#34;/showcase&#34;</span>
+</span></span></code></pre></div><h3 id=create-your-first-post>Create your first post<a href=#create-your-first-post class=hanchor arialabel=Anchor>&#8983;</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>hugo new posts/first-post.md
+</span></span></code></pre></div><h3 id=github-actions>Github actions<a href=#github-actions class=hanchor arialabel=Anchor>&#8983;</a></h3><p>To automatically deploy the website we will use github actions.
+It can be set up like following:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>mkdir -p .github/workflows
+</span></span></code></pre></div><p>Then create a file <code>.github/workflows/deploy.yaml</code> containing following</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>github pages</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>on</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>push</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>branches</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#ae81ff>main </span> <span style=color:#75715e># Set a branch to deploy</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>pull_request</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>jobs</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>deploy</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-22.04</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>steps</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/checkout@v3</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>submodules</span>: <span style=color:#66d9ef>true</span>  <span style=color:#75715e># Fetch Hugo themes (true OR recursive)</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>fetch-depth</span>: <span style=color:#ae81ff>0</span>    <span style=color:#75715e># Fetch all history for .GitInfo and .Lastmod</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Setup Hugo</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>peaceiris/actions-hugo@v2</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>hugo-version</span>: <span style=color:#e6db74>&#39;latest&#39;</span>
+</span></span><span style=display:flex><span>          <span style=color:#75715e># extended: true</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Build</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: <span style=color:#ae81ff>hugo --minify</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Deploy</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>peaceiris/actions-gh-pages@v3</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>if</span>: <span style=color:#ae81ff>github.ref == &#39;refs/heads/main&#39;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>github_token</span>: <span style=color:#ae81ff>${{ secrets.GITHUB_TOKEN }}</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>publish_dir</span>: <span style=color:#ae81ff>./public</span>
+</span></span></code></pre></div><h3 id=testing-the-website-locally>Testing the website locally<a href=#testing-the-website-locally class=hanchor arialabel=Anchor>&#8983;</a></h3><p>To test your website locally hugo can spin up a webserver for you:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>hugo server -D
+</span></span></code></pre></div><h3 id=git-commit>Git commit<a href=#git-commit class=hanchor arialabel=Anchor>&#8983;</a></h3><p>You need to create a initial commit for now:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>git add -A
+</span></span><span style=display:flex><span>git commit -m <span style=color:#e6db74>&#34;init&#34;</span>
+</span></span></code></pre></div><h3 id=create-a-github-repo>Create a github repo<a href=#create-a-github-repo class=hanchor arialabel=Anchor>&#8983;</a></h3><p>It is assumed that you have ssh with github set up to be able to push changes to your github repo.
+Create a github repo called <code>&lt;your github username>.github.io</code>. This is the subdomain you will use to host your website.
+After creating the repo you will see an option called <code>…or push an existing repository from the command line</code>. Copy paste teh commands from there and run them in the <code>website</code> folder.
+For example mine looks like this (<code>DONT COPY PASTE THIS</code>):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>git remote add origin git@github.com:9glenda/glenda.github.io.git
+</span></span><span style=display:flex><span>git branch -M main
+</span></span><span style=display:flex><span>git push -u origin main
+</span></span></code></pre></div><h3 id=set-up-github-pages>Set up github pages<a href=#set-up-github-pages class=hanchor arialabel=Anchor>&#8983;</a></h3><p>You will need to pull up your github repo and open settings/pages to configure github pages.
+Now you need to select <code>Deploy from branch</code> and after that set the branch to deploy from to gh-pages.
+To confirm just press save.</p></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button next"><a href=http://9glenda.github.io/posts/vaultwarden/><span class=button__text>Vaultwarden</span>
+<span class=button__icon>→</span></a></span></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2022 Powered by <a href=http://gohugo.io>Hugo</a></span>
+<span>:: Theme made by <a href=https://twitter.com/panr>panr</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>
