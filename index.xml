@@ -1,31 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>9glenda</title><link>http://9glenda.github.io/</link><description>Recent content on 9glenda</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 31 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://9glenda.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Own Website</title><link>http://9glenda.github.io/posts/own-website/</link><pubDate>Thu, 03 Nov 2022 07:52:41 +0000</pubDate><guid>http://9glenda.github.io/posts/own-website/</guid><description>Create own website with hugo and github-pages A friend asked me about how I created this website and therefor I decided to create this small guide.
-Initialize the hugo site First we have to initialize the hugo website.
-hugo new site website cd website hugo new _index.md this will create a folder called website where your site is stored. You can call the folder differently if you&amp;rsquo;d like to.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>9glenda</title><link>http://9glenda.github.io/</link><description>Recent content on 9glenda</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 31 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://9glenda.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Own Website</title><link>http://9glenda.github.io/posts/own-website/</link><pubDate>Thu, 03 Nov 2022 07:52:41 +0000</pubDate><guid>http://9glenda.github.io/posts/own-website/</guid><description>Create own website with hugo and github-pages A friend asked me about how I created this website, so I decided to create this small guide.
+Initialize the hugo site First, we have to initialize the hugo website.
+hugo new site website cd website hugo new _index.md This will create a folder called website where your site is stored. You can name the folder differently if you&amp;rsquo;d like to.
 Initialize git repo Now we have to initialize a git repo in the website folder.</description><content>&lt;h1 id="create-own-website-with-hugo-and-github-pages">Create own website with hugo and github-pages&lt;/h1>
-&lt;p>A friend asked me about how I created this website and therefor I decided to create this small guide.&lt;/p>
+&lt;p>A friend asked me about how I created this website, so I decided to create this small guide.&lt;/p>
 &lt;h2 id="initialize-the-hugo-site">Initialize the hugo site&lt;/h2>
-&lt;p>First we have to initialize the hugo website.&lt;/p>
+&lt;p>First, we have to initialize the hugo website.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>hugo new site website
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd website
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hugo new _index.md
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>this will create a folder called &lt;code>website&lt;/code> where your site is stored.
-You can call the folder differently if you&amp;rsquo;d like to.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will create a folder called &lt;code>website&lt;/code> where your site is stored.
+You can name the folder differently if you&amp;rsquo;d like to.&lt;/p>
 &lt;h2 id="initialize-git-repo">Initialize git repo&lt;/h2>
 &lt;p>Now we have to initialize a git repo in the &lt;code>website&lt;/code> folder.
-Therefor change directory into the website folder (&lt;code>cd website&lt;/code>).&lt;/p>
+Therefore, change directory into the website folder (&lt;code>cd website&lt;/code>).&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git init
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="gitignore">.gitignore&lt;/h3>
-&lt;p>Add a &lt;code>.gitignore&lt;/code> file like following:&lt;/p>
+&lt;p>Add a &lt;code>.gitignore&lt;/code> file containing the build files created by hugo:&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-gitignore" data-lang="gitignore">public
 .hugo_build.lock
 &lt;/code>&lt;/pre>&lt;h3 id="hugo-theme">Hugo theme&lt;/h3>
-&lt;p>We will use the terminal theme for mow but you can always change it later.
-Add a hugo theme like following:&lt;/p>
+&lt;p>We will use the terminal theme for now but you can always change it later.
+Add a hugo theme with the following commands:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>mkdir themes
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git submodule add
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/terminal
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="hugo-config">Hugo config&lt;/h3>
-&lt;p>Edit your &lt;code>config.toml&lt;/code> like following:&lt;/p>
+&lt;p>Edit your &lt;code>config.toml&lt;/code> like done below:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">baseURL&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;http://&amp;lt;your github username&amp;gt;.github.io/&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">languageCode&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;en-us&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Add it only if you keep the theme in the `themes` directory.&lt;/span>
@@ -114,10 +114,10 @@ Add a hugo theme like following:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="create-your-first-post">Create your first post&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>hugo new posts/first-post.md
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="github-actions">Github actions&lt;/h3>
-&lt;p>To automatically deploy the website we will use github actions.
-It can be set up like following:&lt;/p>
+&lt;p>To automatically deploy the website, we will use github actions.
+It can be set up with the following command:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>mkdir -p .github/workflows
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then create a file &lt;code>.github/workflows/deploy.yaml&lt;/code> containing following&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then create a file &lt;code>.github/workflows/deploy.yaml&lt;/code> containing the following:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">github pages&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">on&lt;/span>:
@@ -160,15 +160,15 @@ It can be set up like following:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="create-a-github-repo">Create a github repo&lt;/h3>
 &lt;p>It is assumed that you have ssh with github set up to be able to push changes to your github repo.
 Create a github repo called &lt;code>&amp;lt;your github username&amp;gt;.github.io&lt;/code>. This is the subdomain you will use to host your website.
-After creating the repo you will see an option called &lt;code>…or push an existing repository from the command line&lt;/code>. Copy paste teh commands from there and run them in the &lt;code>website&lt;/code> folder.
-For example mine looks like this (&lt;code>DONT COPY PASTE THIS&lt;/code>):&lt;/p>
+After creating the repo you will see an option called &lt;code>or push an existing repository from the command line&lt;/code>. Copy paste the commands from github and run them locally in the &lt;code>website&lt;/code> folder.
+For example, mine looks like this (&lt;code>DO NOT COPY PASTE THIS&lt;/code>):&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git remote add origin git@github.com:9glenda/glenda.github.io.git
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git branch -M main
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git push -u origin main
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="set-up-github-pages">Set up github pages&lt;/h3>
 &lt;p>You will need to pull up your github repo and open settings/pages to configure github pages.
 Now you need to select &lt;code>Deploy from branch&lt;/code> and after that set the branch to deploy from to gh-pages.
-To confirm just press save.&lt;/p></content></item><item><title>Vaultwarden</title><link>http://9glenda.github.io/posts/vaultwarden/</link><pubDate>Mon, 31 Oct 2022 00:00:00 +0000</pubDate><guid>http://9glenda.github.io/posts/vaultwarden/</guid><description>Vaultwarden on nixos with tailscale and https Code:
+To confirm, just press save.&lt;/p></content></item><item><title>Vaultwarden</title><link>http://9glenda.github.io/posts/vaultwarden/</link><pubDate>Mon, 31 Oct 2022 00:00:00 +0000</pubDate><guid>http://9glenda.github.io/posts/vaultwarden/</guid><description>Vaultwarden on nixos with tailscale and https Code:
 { pkgs , config , lib , ... }: with lib; with builtins; let cfg = config.sys.services; tskey = builtins.getEnv &amp;#34;key&amp;#34;; in { config = mkIf cfg.vaultwarden { services.vaultwarden = { enable = true; config = { domain = &amp;#34;https://pi.tahr-cloud.ts.net&amp;#34;; #domain = &amp;#34;https://pi.9glenda.github.beta.tailscale.net&amp;#34;; signupsAllowed = true; }; }; services.caddy = { enable = true; #virtualHosts.&amp;#34;pi.9glenda.github.beta.tailscale.net&amp;#34;.extraConfig = &amp;#39;&amp;#39; virtualHosts.&amp;#34;pi.tahr-cloud.ts.net&amp;#34;.extraConfig = &amp;#39;&amp;#39; reverse_proxy http://127.0.0.1:8000 &amp;#39;&amp;#39;; }; }; }</description><content>&lt;h1 id="vaultwarden-on-nixos-with-tailscale-and-https">Vaultwarden on nixos with tailscale and https&lt;/h1>
 &lt;p>Code:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-nix" data-lang="nix">&lt;span style="display:flex;">&lt;span>{ pkgs
