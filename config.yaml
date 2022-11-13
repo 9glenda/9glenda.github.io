@@ -1,0 +1,69 @@
+baseURL: 'http://9glenda.github.io/'
+languageCode: en-us
+title: 9glenda
+theme: terminal
+paginate: 5
+copyright: GPL
+enableRobotsTXT: true
+languages:
+  en:
+    languageName: English
+    title: 9glenda
+    subtitle: Personal website
+    owner: 9glenda
+    keywords: ''
+    copyright: ''
+    menuMore: Show more
+    readMore: Read more
+    readOtherPosts: Read other posts
+    newerPosts: Newer posts
+    olderPosts: Older posts
+    missingContentMessage: Page not found...
+    missingBackButtonLabel: Back to home page
+    contentDir: content
+    params:
+      logo:
+        logoText: ~/9glenda
+        logoHomeLink: /
+    menu:
+      main:
+        - identifier: about
+          name: 'About'
+          url: '/about'
+        - identifier: github
+          name: 'Github'
+          url: 'https://github.com/9glenda'
+        - identifier: tags
+          name: 'Tags'
+          url: '/tags'
+params:
+  contentTypeName: posts
+  themeColor: blue
+  showMenuItems: 5
+  showLanguageSelector: false
+  fullWidthTheme: false
+  centerTheme: true
+  autoCover: true
+  showLastUpdated: false
+author:
+  name: 9glenda
+
+module:
+  replacements: github.com/9glenda/hugo-theme-terminal -> themes/terminal
+  imports:
+    - path: github.com/9glenda/hugo-theme-terminal
+
+
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    disable: true
+  instagram:
+    disable: true
+  twitter:
+    disable: true
+  vimeo:
+    disable: true
+  youtube:
+    disable: true
