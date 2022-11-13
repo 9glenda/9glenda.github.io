@@ -1,9 +1,7 @@
 +++
 title = "Own Website"
-date = "2022-11-03T07:52:41Z"
-author = ""
-authorTwitter = "" #do not include @
-cover = ""
+date = "2022-11-03"
+author = "9glenda"
 tags = ["hugo", "github-pages"]
 description = "Guide to create your own website with github pages"
 readingTime = true
